@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Medikamente</h2>
+
+<a href="/medikament/add">Neues Medikament</a>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Hersteller</th>
+    <th>Ablaufdatum</th>
+    <th>Aktionen</th>
+  </tr>
+
+  <tr th:each="m : ${medikamente}">
+    <td th:text="${m.name}"></td>
+    <td th:text="${m.hersteller}"></td>
+    <td th:text="${m.ablaufdatum}"></td>
+
+    <td>
+      <a th:href="@{/medikament/edit/{id}(id=${m.id})}">Bearbeiten</a>
+      <a th:href="@{/medikament/delete/{id}(id=${m.id})}">Löschen</a>
+    </td>
+
+  </tr>
+</table>
+
+</body>
+</html>

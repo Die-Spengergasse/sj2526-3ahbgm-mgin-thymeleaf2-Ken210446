@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Medikament bearbeiten</h2>
+
+<form th:action="@{/medikament/update}" th:object="${medikament}" method="post">
+
+    <input type="hidden" th:field="*{id}">
+
+    Name: <input type="text" th:field="*{name}"><br>
+    Hersteller: <input type="text" th:field="*{hersteller}"><br>
+    Ablaufdatum: <input type="date" th:field="*{ablaufdatum}"><br>
+
+    <button type="submit">Update</button>
+
+</form>
+
+</body>
+</html>
